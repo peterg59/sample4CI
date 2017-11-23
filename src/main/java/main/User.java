@@ -1,6 +1,8 @@
+package main;
+
 public class User {
 
-    public Long id;
+    private Long id;
 
     private String lastName;
 
@@ -21,6 +23,14 @@ public class User {
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
+    
+    public Long getId() {
+		return id;
+	}
+    
+    public void setId(Long id) {
+		this.id = id;
+	}
 
     @Override
     public boolean equals(Object o) {
@@ -31,11 +41,17 @@ public class User {
 
         return id.equals(user.id);
     }
+    
+    @Override
+    public int hashCode() {
+    	// TODO Auto-generated method stub
+    	return super.hashCode();
+    }
 
     @Override
     public String toString() {
         if (id == null) {
-            return null;
+            return "";
         }
         return "id=" + id + ", lastName=" + lastName + ", firstName=" + firstName;
     }
